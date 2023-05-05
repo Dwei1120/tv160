@@ -493,6 +493,16 @@ public class HomeActivity extends BaseActivity {
             if (currentView != null) {
                 showFilterIcon((int) event.obj);
             }
+        } else if (event.type == RefreshEvent.RE_LOAD_HOME_DATA) {
+            dataInitOk = false;
+            jarInitOk = false;
+            initData();
+        } else if (event.type == RefreshEvent.ALI_TOKEN) {
+            Toast.makeText(mContext, "已获取到alitoken", Toast.LENGTH_SHORT).show();
+            Hawk.put(HawkConfig.ALI_TOKEN, event.obj + "");
+            dataInitOk = false;
+            jarInitOk = false;
+            initData();
         }
     }
     
