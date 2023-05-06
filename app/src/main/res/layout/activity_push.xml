@@ -64,8 +64,8 @@
                 android:background="@drawable/input_search"
                 android:gravity="top"
                 android:padding="@dimen/vs_10"
-                android:hint="粘贴播放链接\n如果是推送阿里token,格式为token@xxxxxxx(xxxx为alitoken的值)
-\n扫码推送直接粘贴alitoken的值即可，无需填写token@"
+                android:hint="粘贴播放链接\n推送阿里token,格式为token@****
+\n扫码推送直接粘贴alitoken值即可，无需填写token@"
                 android:paddingHorizontal="@dimen/dp_10"
                 android:paddingVertical="@dimen/dp_4"
                 android:textColor="@color/color_FFFFFF"
