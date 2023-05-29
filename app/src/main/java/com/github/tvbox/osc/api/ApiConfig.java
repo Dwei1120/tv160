@@ -439,7 +439,7 @@ public class ApiConfig {
             VideoParseRuler.clearRule();
             for(JsonElement oneHostRule : infoJson.getAsJsonArray("rules")) {
                 JsonObject obj = (JsonObject) oneHostRule;
-                //String host = obj.get("host").getAsString();
+                //String host = obj.get("host").getAsString();   // 原rules
                 String host = "";
             if (obj.has("hosts")) {
                 JsonArray hostsArray = obj.getAsJsonArray("hosts");
