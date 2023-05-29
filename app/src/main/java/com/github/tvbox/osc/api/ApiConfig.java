@@ -439,7 +439,30 @@ public class ApiConfig {
             VideoParseRuler.clearRule();
             for(JsonElement oneHostRule : infoJson.getAsJsonArray("rules")) {
                 JsonObject obj = (JsonObject) oneHostRule;
-                String host = obj.get("host").getAsString();
+                //String host = obj.get("host").getAsString();
+                String host = "";
+            if (obj.has("hosts")) {
+                JsonArray hostsArray = obj.getAsJsonArray("hosts");
+                if (hostsArray.size() > 1) {
+                    host = hostsArray.get(0).getAsString().trim(); // use first value of hosts array
+                }else{
+                    host = obj.get("hosts").getAsString();
+                   }                      
+                }else{
+                    host = obj.get("host").getAsString();                    
+              }
+
+            if (obj.has("regex")) {
+                JsonArray ruleJsonArr = obj.getAsJsonArray("regex");
+                ArrayList<String> regex = new ArrayList<>();
+                for(JsonElement one : ruleJsonArr) {
+                    String oneRule = one.getAsString();
+                    regex.add(oneRule);
+                }
+                if (regex.size() > 0) {
+                    VideoParseRuler.addHostRule(host, regex);
+                }
+            }
                 if (obj.has("rule")) {
                     JsonArray ruleJsonArr = obj.getAsJsonArray("rule");
                     ArrayList<String> rule = new ArrayList<>();
