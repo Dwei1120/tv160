@@ -127,7 +127,7 @@ public class ApiConfig {
     }
 
     public void loadConfig(boolean useCache, LoadConfigCallback callback, Activity activity) {
-        String apiUrl = Hawk.get(HawkConfig.API_URL, "https://0dlj.cn/dweitv");
+        String apiUrl = Hawk.get(HawkConfig.API_URL, "https://jihulab.com/dwei1/dwei/-/raw/main/Dwei.json");
         if (apiUrl.isEmpty()) {
             callback.error("-1");
             return;
