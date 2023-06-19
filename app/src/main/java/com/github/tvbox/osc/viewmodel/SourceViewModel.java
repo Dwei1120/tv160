@@ -673,7 +673,7 @@ public class SourceViewModel extends ViewModel {
                     result.put("parse", 1);
                     result.put("url", url);
                 }
-                result.put("proKey", progressKey);
+                //result.put("proKey", progressKey);
                 result.put("subtKey", subtitleKey);
                 result.put("playUrl", playUrl);
                 result.put("flag", playFlag);
