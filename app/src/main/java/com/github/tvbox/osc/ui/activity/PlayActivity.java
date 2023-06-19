@@ -129,7 +129,7 @@ public class PlayActivity extends BaseActivity {
         initViewModel();
         initData();
     }
-    
+/*    
     public long getSavedProgress(String url) {
         int st = 0;
         try {
@@ -146,7 +146,7 @@ public class PlayActivity extends BaseActivity {
             return skip;
         return rec;
     }
-
+*/
     private void initView() {
         mHandler = new Handler(new Handler.Callback() {
             @Override
@@ -177,7 +177,7 @@ public class PlayActivity extends BaseActivity {
 
             @Override
             public long getSavedProgress(String url) {
-          /*      int st = 0;
+                int st = 0;
                 try {
                     st = mVodPlayerCfg.getInt("st");
                 } catch (JSONException e) {
@@ -191,7 +191,7 @@ public class PlayActivity extends BaseActivity {
                 if (rec < skip)
                     return skip;
                 return rec;
-                */
+                
                 return PlayActivity.this.getSavedProgress(url);
             }
         };
@@ -527,9 +527,9 @@ public class PlayActivity extends BaseActivity {
                                 String playTitle = mVodInfo.name + " " + vs.name;
                                 setTip("调用外部播放器" + PlayerHelper.getPlayerName(playerType) + "进行播放", true, false);
                                 boolean callResult = false;
-                                //callResult = PlayerHelper.runExternalPlayer(playerType, PlayActivity.this, url, playTitle, playSubtitle, headers);
-                                long progress = getSavedProgress(progressKey);
-                                callResult = PlayerHelper.runExternalPlayer(playerType, PlayActivity.this, finalUrl, playTitle, playSubtitle, headers);
+                                callResult = PlayerHelper.runExternalPlayer(playerType, PlayActivity.this, url, playTitle, playSubtitle, headers);
+                                //long progress = getSavedProgress(progressKey);
+                                //callResult = PlayerHelper.runExternalPlayer(playerType, PlayActivity.this, finalUrl, playTitle, playSubtitle, headers);
                                 setTip("调用外部播放器" + PlayerHelper.getPlayerName(playerType) + (callResult ? "成功" : "失败"), callResult, !callResult);
                                 return;
                             }
