@@ -191,8 +191,7 @@ public class PlayActivity extends BaseActivity {
                 if (rec < skip)
                     return skip;
                 return rec;
-                
-                return PlayActivity.this.getSavedProgress(url);
+                //return PlayActivity.this.getSavedProgress(url);
             }
         };
         mVideoView.setProgressManager(progressManager);
